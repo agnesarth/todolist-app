@@ -6,7 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
 require 'faker'
+
+Category.delete_all
+Task.delete_all
+
+
 3.times do
   my_category = Category.create(title: Faker::Book.genre)
   3.times do
