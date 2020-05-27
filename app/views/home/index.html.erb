@@ -4,15 +4,10 @@
   <ul>
   <% @categories.each do  |category|%>
   <li><%= category.title  %>
-  <div class="card">
+  <div class="card row">
     <ul id="<%= category.title %>">
       <% category.tasks.each do |task|  %>
-      <li >
-        <%= task.title  %>
-        <% unless task.deadline.nil? %>
-          , to read: <%= task.deadline.strftime('%D')  %>
-        <% end %>
-      </li>
+        <%= render 'tasks/task', task: task %>
       <% end %>
     </ul>
   </div>
