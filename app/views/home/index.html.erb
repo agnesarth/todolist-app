@@ -6,7 +6,7 @@
   <li><%= category.title  %>
   <div class="card row">
     <ul id="<%= category.title %>">
-      <% category.tasks.each do |task| %>
+      <% category.tasks.order("deadline ASC").each do |task| %>
         <%= render 'tasks/task', task: task %>
       <% end %>
     </ul>

@@ -1,2 +1,3 @@
 alert("Tâche éditée");
-document.getElementById("<%= @task.id %>")
+document.getElementById("<%= @task.id %>").innerHTML = "<%= j render 'task', task: @task %>";
+
